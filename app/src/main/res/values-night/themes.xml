@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.TradingApp" parent="Base.Theme.MyApp">
+        <item name="colorPrimary">#FF9DA3FA</item>
+        <item name="colorPrimaryVariant">#FF4860F7</item>
+        <item name="colorOnPrimary">#FF000000</item>
+
+        <item name="colorSecondary">#ff38ada9</item>
+        <item name="colorSecondaryVariant">#ff079992</item>
+        <item name="colorOnSecondary">#ff000000</item>
+
+        <item name="colorOnSurface">#ffffffff</item>
+
+        <item name="colorOnBackground">#ffffffff</item>
+
+        <item name="android:statusBarColor" tools:ignore="NewApi">#ff000000</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+    </style>
+</resources>

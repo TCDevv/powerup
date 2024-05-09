@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.TradingApp" parent="Base.Theme.MyApp" />
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MyApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#ff60a3bc</item>
+        <item name="colorPrimaryVariant">#ff3c6382</item>
+        <item name="colorOnPrimary">#FFFFFFFF</item>
+
+        <item name="colorSecondary">#ff38ada9</item>
+        <item name="colorSecondaryVariant">#ff079992</item>
+        <item name="colorOnSecondary">#ff000000</item>
+
+        <item name="colorOnSurface">#ff000000</item>
+
+        <item name="colorOnBackground">#ff000000</item>
+
+        <item name="android:statusBarColor" tools:ignore="NewApi">#FFFFFFFF</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
+    </style>
+</resources>
