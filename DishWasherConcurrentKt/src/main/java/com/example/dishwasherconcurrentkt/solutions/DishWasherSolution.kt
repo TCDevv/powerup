@@ -2,66 +2,71 @@ package com.example.dishwasherconcurrentkt.solutions
 
 import com.example.dishwasherconcurrentkt.utils.Console
 
-class DishWasherSolution:MainSolution {
-    private val mDish:Dish = Dish()
+class DishWasherSolution : MainSolution {
+    private val mDish: Dish = Dish()
+    companion object{
+        const val WASH = 1
+        const val CONSUME = 2
+    }
     override fun solve() {
-        for (i in 0..10){
+        for (i in 0..10) {
             mDish.putFood("Dirty")
         }
-        val dishWasher:Worker = Worker("DishWasher", Runnable {
+        val dishWasher: Worker = Worker("DishWasher", Runnable {
             try {
-                synchronized(mDish) {
-                    Console.log("DishWasher took the dish")
-                    while (true){
-                        if(!mDish.checkDishEmpty()) {
+                while (true) {
+                    synchronized(mDish) {
+                        Console.log("DishWasher took the dish")
+                        if (!mDish.checkDishEmpty()) {
                             Console.log("Dish is washing")
-                            mDish.releaseFood()
-                        }
-                        else{
+                            mDish.releaseFood(WASH)
+                        } else {
                             Console.log("Finish washing")
                         }
                         Thread.sleep(1000)
                     }
                 }
-            }
-            catch(e:InterruptedException){
+            } catch (e: InterruptedException) {
                 e.printStackTrace()
             }
         })
 
-        val foodPlacer:Worker = Worker("FoodPlacer", Runnable {
+        val foodPlacer: Worker = Worker("FoodPlacer", Runnable {
             try {
-                synchronized(mDish) {
-                    Console.log("FoodPlacer took the dish")
-                    while (true){
-                        mDish.putFood("Food")
-                        Console.log("Food is placing")
+                while (true) {
+                    synchronized(mDish) {
+                        Console.log("FoodPlacer took the dish")
+                        for (i in 0..10) {
+                            mDish.putFood("Food")
+                            Thread.sleep(1000)
+                        }
+                        Console.log("Foods was placed")
                         Thread.sleep(1000)
                     }
                 }
-            }
-            catch(e:InterruptedException){
+            } catch (e: InterruptedException) {
                 e.printStackTrace()
             }
         })
 
-        val foodConsumer:Worker = Worker("FoodConsumer", Runnable {
+        val foodConsumer: Worker = Worker("FoodConsumer", Runnable {
             try {
-                synchronized(mDish) {
-                    Console.log("FoodConsumer took the dish")
-                        if(!mDish.checkDishEmpty()){
-                            while (true){
-                                mDish.releaseFood()
-                                Console.log("Food is consuming")
+                while (true) {
+                    synchronized(mDish) {
+                        if (!mDish.checkDishEmpty()) {
+                            Console.log("FoodConsumer took the dish")
+                            for (i in 0..mDish.getFoodCount()) {
+                                mDish.releaseFood(CONSUME)
                                 Thread.sleep(1000)
                             }
-                        }
-                        else {
+                            Console.log("Consume foods finished")
+                            Thread.sleep(1000)
+                        } else {
                             Console.log("Not thing to consume")
                         }
+                    }
                 }
-            }
-            catch(e:InterruptedException){
+            } catch (e: InterruptedException) {
                 e.printStackTrace()
             }
         })

@@ -13,13 +13,22 @@ class Dish {
         Console.log("Put ${food}")
     }
 
-    fun releaseFood() {
+    fun releaseFood(type:Int) {
+        if(type == DishWasherSolution.WASH){
+            Console.log("Wash ${listFood.first()}")
+        }
+        else{
+            Console.log("Eat ${listFood.first()}")
+        }
         listFood.removeFirst()
-        Console.log("Release ${listFood.first()}")
     }
 
     fun printFood() {
        Console.log("Dish has ${listFood.size} food")
+    }
+
+    fun getFoodCount():Int{
+        return listFood.size
     }
 
 }
