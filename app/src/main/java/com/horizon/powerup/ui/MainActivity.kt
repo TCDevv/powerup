@@ -27,14 +27,14 @@ class MainActivity : AppCompatActivity(), Navigator.Container, Messenger.Contain
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.atm_layout)
 
-        attachNavigator()
-        attachMessenger()
-
-        registerPermissionLauncher()
-
-        forceRequirementToUse()
+//        attachNavigator()
+//        attachMessenger()
+//
+//        registerPermissionLauncher()
+//
+//        forceRequirementToUse()
     }
 
     override fun onDestroy() {

@@ -4,3 +4,4 @@ rootProject.name = "PowerUp"
 include ':SimpleJavaConcurrent'
 include ':SimpleKotlinConcurrent'
 include ':DishWasherConcurrentKt'
+include ':AtmJavaConcurrent'
