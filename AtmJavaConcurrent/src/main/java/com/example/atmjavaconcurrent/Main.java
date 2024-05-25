@@ -7,10 +7,10 @@ public class Main {
     public static void main(String[] args){
         MainSolution atmSolution = new AtmSolution();
         atmSolution.solve();
-//        try{
-//            Thread.currentThread().join();
-//        }catch (InterruptedException e){
-//            e.printStackTrace();
-//        }
+        try{
+            Thread.currentThread().join();
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
     }
 }

@@ -38,7 +38,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nhập số tiền cần rút:"
+                android:gravity="center"
+                android:text="Nhập số tiền cần nạp/rút:"
                 android:textSize="18sp" />
 
             <EditText
@@ -54,6 +55,13 @@
                 android:layout_height="wrap_content"
                 android:text="Rút tiền"
                 android:padding="16dp" />
+
+            <Button
+                android:id="@+id/btn_deposit_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nạp tiền"
+                android:padding="16dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -74,7 +82,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nhập số tiền cần rút:"
+                android:gravity="center"
+                android:text="Nhập số tiền cần nạp/rút:"
                 android:textSize="18sp" />
 
             <EditText
@@ -90,6 +99,13 @@
                 android:layout_height="wrap_content"
                 android:text="Rút tiền"
                 android:padding="16dp" />
+
+            <Button
+                android:id="@+id/btn_deposit_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nạp tiền"
+                android:padding="16dp"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
