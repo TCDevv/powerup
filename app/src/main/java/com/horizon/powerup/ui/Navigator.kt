@@ -3,7 +3,6 @@ package com.horizon.powerup.ui
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.horizon.powerup.R
-import com.horizon.powerup.ui.main.MainFragment
 
 
 object Navigator {
@@ -31,10 +30,6 @@ object Navigator {
         container?.run {
             getHostFragmentManager().popBackStack()
         }
-    }
-
-    fun toMainScreen() {
-        replace(MainFragment.newInstance())
     }
 
     interface Container {
