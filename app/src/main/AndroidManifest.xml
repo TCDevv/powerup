@@ -27,7 +27,7 @@
         android:theme="@style/Theme.TradingApp"
         android:usesCleartextTraffic="true">
         <activity
-            android:name="com.horizon.powerup.ui.MainActivity"
+            android:name="com.horizon.powerup.presentation.MainActivity"
             android:exported="true"
             android:launchMode="singleTask"
             android:windowSoftInputMode="adjustResize">

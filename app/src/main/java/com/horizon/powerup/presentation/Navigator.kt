@@ -1,4 +1,4 @@
-package com.horizon.powerup.ui
+package com.horizon.powerup.presentation
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

@@ -1,13 +1,17 @@
-package com.horizon.powerup.ui
+package com.horizon.powerup.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import com.horizon.powerup.R
+import com.horizon.powerup.di.Injector
 
 class MainActivity : AppCompatActivity(), Navigator.Container {
+    private val repository = Injector.injectRepository()
+    private val logger = Injector.injectLogger()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        logger.log(repository.getUserInfo("userInfo"))
         setContentView(R.layout.activity_main)
         attachNavigator()
     }
