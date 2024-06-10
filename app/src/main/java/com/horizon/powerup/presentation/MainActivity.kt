@@ -9,9 +9,11 @@ import com.horizon.powerup.di.Injector
 class MainActivity : AppCompatActivity(), Navigator.Container {
     private val repository = Injector.injectRepository()
     private val logger = Injector.injectLogger()
+    private val pokemonRepository = Injector.injectPokemonRepository()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         logger.log(repository.getUserInfo("userInfo"))
+        logger.log(pokemonRepository.getPokemonList())
         setContentView(R.layout.activity_main)
         attachNavigator()
     }

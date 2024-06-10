@@ -1,5 +1,7 @@
 package com.horizon.powerup.domain
 
+import com.horizon.powerup.data.HttpClient
+
 class Repository(
     private val httpClient: HttpClient
 ) {

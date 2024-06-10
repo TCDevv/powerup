@@ -1,4 +1,4 @@
-package com.horizon.powerup.domain
+package com.horizon.powerup.data
 
 class HttpClient {
     fun get(url: String): String {
